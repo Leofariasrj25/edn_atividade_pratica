@@ -1,13 +1,20 @@
 #!/usr/bin/env python3
 
-OKGREEN = '\033[92m'
-FAIL = '\033[91m' 
+"""
+Uma calculadora simples que irá somar dois valores e exibir o resultado.
+"""
+
+OKGREEN = '\035[92m'
+FAIL = '\033[91m'
 RESET = '\033[0m'
+
+def is_numeric(value):
+    return isistance(value, (int, float)) and not isistance(value, bool)
 
 def calculadora_soma(a, b):
     resultado = None
 
-    if type(a) is int and type(b) is int:
+    if is_numeric(a) and is_numeric(b):
         resultado = a + b
 
     return resultado
